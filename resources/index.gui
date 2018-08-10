@@ -1,0 +1,57 @@
+<svg id="stage" pointer-events="visible">
+  <defs>
+    <symbol id="content">
+      <use id="stats-cycle" href="#cycleview">
+        <use href="#cycleview-item" class="cycle-item">
+          <use href="#mixed-text-center-mid" height="100%" id="mixedText">
+            <set href="#header/text" attributeName="text-buffer" to="" />
+            <set href="#header/text" attributeName="text-length" to="128" />
+            <set href="#header/text" attributeName="font-size" to="55" />
+            <set href="#header/text" attributeName="font-family" to="Colfax-Bold" />
+            
+            <set href="#copy/text" attributeName="text-buffer" to="" />
+            <set href="#copy/text" attributeName="text-length" to="128" />
+            <set href="#copy/text" attributeName="fill" to="black" />
+          </use>
+        </use>
+        <use href="#cycleview-item" class="cycle-item">
+          <use href="#mixed-text-center-mid" height="100%" id="mixedText2">
+            <set href="#header/text" attributeName="text-buffer" to="" />
+            <set href="#header/text" attributeName="text-length" to="128" />
+            <set href="#header/text" attributeName="font-size" to="55" />
+            <set href="#header/text" attributeName="font-family" to="Colfax-Bold" />
+            
+            <set href="#copy/text" attributeName="text-buffer" to="" />
+            <set href="#copy/text" attributeName="text-length" to="128" />
+            <set href="#copy/text" attributeName="fill" to="black" />
+          </use>
+        </use>
+      </use>
+      <image id="logo" x="40%" y="8%" width="50" height="50" href="hpe-onesphere-mark.png"  />
+      <image id="btn" x="45%" y="83%" width="30" height="30" href="down-arrow.png" pointer-events="none" />
+      <animate attributeName="opacity" begin="enable" from="0" to="1" dur="0.5" final="freeze" />
+    </symbol>
+  </defs>
+  <rect id="background" />
+  <use href="#mixed-text-center-mid" height="100%" id="mixedTextError">
+    <set href="#header/text" attributeName="text-buffer" to="" />
+    <set href="#header/text" attributeName="text-length" to="128" />
+    <set href="#header/text" attributeName="font-size" to="55" />
+    <set href="#header/text" attributeName="font-family" to="Colfax-Bold" />
+
+    <set href="#copy/text" attributeName="text-buffer" to="" />
+    <set href="#copy/text" attributeName="text-length" to="128" />
+    <set href="#copy/text" attributeName="fill" to="black" />
+  </use>
+  <text id="textBtm" x="50%" y="280">
+    <animate attributeName="opacity" begin="load" from="0" to="1" dur="0.5" final="freeze" />
+    Loading...
+  </text>
+  <image id="bigLogo" x="17%" y="8%" width="200" height="200" href="hpe-onesphere-mark.png">
+    <animate attributeName="opacity" begin="load" from="0" to="1" dur="0.5" final="freeze" />
+  </image>
+  <svg width="100%" height="100%">
+    <rect id="myRect" pointer-events="visible" />
+    <use id="contentInstance" href="#content" width="100%" height="100%" pointer-events="visible" />
+  </svg>
+</svg>

@@ -1,0 +1,46 @@
+.defaultText {
+  font-size: 32;
+  font-family: Colfax-Light;
+  font-weight: regular;
+  text-length: 32;
+  fill: black;
+  text-anchor: middle;
+}
+
+text {
+  font-size: 32;
+  font-family: Colfax-Light;
+  font-weight: regular;
+  text-length: 32;
+  fill: black;
+  text-anchor: middle;
+}
+
+#background {
+  width: 100%;
+  height: 100%;
+  fill: white;
+}
+
+#content {
+  opacity: 0;
+}
+
+#heading {
+  font-size: 55;
+  font-family: Colfax-Bold;
+}
+
+#textMain2 {
+  font-size: 55;
+  font-family: Colfax-Bold;
+}
+
+.cycle-item text {
+  font-size: 32;
+  font-family: Colfax-Light;
+  text-length: 32;
+  fill: black;
+  x: 50%;
+  text-anchor: middle;
+}
