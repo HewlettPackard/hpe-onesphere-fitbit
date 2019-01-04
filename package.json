@@ -1,20 +1,19 @@
 {
   "fitbit": {
-    "appUUID": "a21621da-3f71-4b2d-9598-68fbcbdbdb35",
+    "appUUID": "924371f8-abc7-4c98-803e-e2e14a44a01e",
     "appType": "app",
-    "appDisplayName": "HPE OneSphere",
+    "appDisplayName": "OneSphere",
     "iconFile": "resources/icon.png",
     "wipeColor": "#607d8b",
     "requestedPermissions": [
       "access_internet"
     ],
     "buildTargets": [
-      "higgs",
       "meson"
     ],
     "i18n": {
       "en": {
-        "name": "HPE OneSphere"
+        "name": "OneSphere"
       }
     }
   }

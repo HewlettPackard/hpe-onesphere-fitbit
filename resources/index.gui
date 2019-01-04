@@ -1,57 +1,215 @@
-<svg id="stage" pointer-events="visible">
+<svg>
   <defs>
-    <symbol id="content">
-      <use id="stats-cycle" href="#cycleview">
-        <use href="#cycleview-item" class="cycle-item">
-          <use href="#mixed-text-center-mid" height="100%" id="mixedText">
-            <set href="#header/text" attributeName="text-buffer" to="" />
-            <set href="#header/text" attributeName="text-length" to="128" />
-            <set href="#header/text" attributeName="font-size" to="55" />
-            <set href="#header/text" attributeName="font-family" to="Colfax-Bold" />
-            
-            <set href="#copy/text" attributeName="text-buffer" to="" />
-            <set href="#copy/text" attributeName="text-length" to="128" />
-            <set href="#copy/text" attributeName="fill" to="black" />
-          </use>
-        </use>
-        <use href="#cycleview-item" class="cycle-item">
-          <use href="#mixed-text-center-mid" height="100%" id="mixedText2">
-            <set href="#header/text" attributeName="text-buffer" to="" />
-            <set href="#header/text" attributeName="text-length" to="128" />
-            <set href="#header/text" attributeName="font-size" to="55" />
-            <set href="#header/text" attributeName="font-family" to="Colfax-Bold" />
-            
-            <set href="#copy/text" attributeName="text-buffer" to="" />
-            <set href="#copy/text" attributeName="text-length" to="128" />
-            <set href="#copy/text" attributeName="fill" to="black" />
-          </use>
-        </use>
-      </use>
-      <image id="logo" x="40%" y="8%" width="50" height="50" href="hpe-onesphere-mark.png"  />
-      <image id="btn" x="45%" y="83%" width="30" height="30" href="down-arrow.png" pointer-events="none" />
-      <animate attributeName="opacity" begin="enable" from="0" to="1" dur="0.5" final="freeze" />
+    <symbol id="utilizations" display="none">
+      <rect id="background" />
+      <text id="cpu-header" y="50%" x="50%" font-size="26" font-family="Colfax-Bold">-/-</text>
+      <text id="storage-header" y="62%" x="50%" font-size="26" font-family="Colfax-Bold"></text>
+      <text y="75%" x="50%" font-size="20" font-family="Colfax-Regular">Utilizations</text>
+      <image id="logo" x="40%" y="8%" width="60" height="60" href="img/hpe-onesphere-mark.png" />
+      <rect id="touch-utl" pointer-events="all" x="0" y="0" width="100%" height="100%" opacity="0" />
     </symbol>
   </defs>
-  <rect id="background" />
-  <use href="#mixed-text-center-mid" height="100%" id="mixedTextError">
-    <set href="#header/text" attributeName="text-buffer" to="" />
-    <set href="#header/text" attributeName="text-length" to="128" />
-    <set href="#header/text" attributeName="font-size" to="55" />
-    <set href="#header/text" attributeName="font-family" to="Colfax-Bold" />
+  <use id="container" href="#panoramaview">
+    <!-- Provider rating -->
+    <use id="item1" href="#panoramaview-item">
+      <use id="extenceBtn01" href="#push-button">
+        <rect width="100%" height="100%" fill="fb-white" />
+        <image id="group-up" x="85" y="186" width="21" height="21" href="img/services-up.png" />
+        <text id="up" x="130" y="207" font-size="29" font-family="Colfax-Regular">-</text>
+        <image id="group-down" x="170" y="186" width="21" height="21" href="img/services-down.png" />
+        <text id="down" x="215" y="207" font-size="29" font-family="Colfax-Regular">-</text>
 
-    <set href="#copy/text" attributeName="text-buffer" to="" />
-    <set href="#copy/text" attributeName="text-length" to="128" />
-    <set href="#copy/text" attributeName="fill" to="black" />
+        <use href="#mixed-text-center-mid" height="100%" fill="fb-black">
+          <set href="#header/text" attributeName="text-buffer" to="Providers" />
+          <set href="#header/text" attributeName="text-length" to="128" />
+          <set href="#header/text" attributeName="font-family" to="Colfax-Bold" />
+        </use>
+        <!-- Rating module starts -->
+        <svg id="rating-module">
+          <rect id="background" />
+          <use id="ratings-tile" href="#tile-list">
+            <var id="align-mode" value="1" />
+            <var id="peek-enabled" value="0" />
+            <use href="#tile-list-item" class="rating-item">
+              <text id="aws-rating" y="50%" font-size="36" font-family="Colfax-Bold">-/-</text>
+              <text y="60%" font-size="20" font-family="Colfax-Regular">Amazon Web Services</text>
+              <rect id="touch-me" pointer-events="all" x="0" y="0" width="100%" height="100%" opacity="0" />
+            </use>
+            <use href="#tile-list-item" class="rating-item">
+              <text id="az-rating" y="50%" font-size="36" font-family="Colfax-Bold">-/-</text>
+              <text y="60%" font-size="20" font-family="Colfax-Regular">Microsoft Azure</text>
+              <rect id="touch-me" pointer-events="all" x="0" y="0" width="100%" height="100%" opacity="0" />
+            </use>
+            <use href="#tile-list-item" class="rating-item">
+              <text id="pc-rating" y="50%" font-size="36" font-family="Colfax-Bold">-/-</text>
+              <text y="60%" font-size="20" font-family="Colfax-Regular">Private Cloud</text>
+              <rect id="touch-me" pointer-events="all" x="0" y="0" width="100%" height="100%" opacity="0" />
+            </use>
+            <image id="logo" x="40%" y="8%" width="60" height="60" href="img/hpe-onesphere-mark.png" />
+            <use id="utl" href="#utilizations" display="none" />
+          </use>
+        </svg>
+        <!-- Rating module ends -->
+      </use>
+    </use>
+    <!-- Insights -->
+    <use id="item2" href="#panoramaview-item">
+      <use id="extenceBtn02" href="#push-button">
+        <rect width="100%" height="100%" fill="fb-white" />
+        
+        <use href="#mixed-text-center-mid" height="100%" fill="fb-black" id="totalCost">
+          <set href="#header/text" attributeName="text-buffer" to="Insights" />
+          <set href="#header/text" attributeName="font-family" to="Colfax-Bold" />
+          <set href="#copy/text" attributeName="text-buffer" to="-" />
+          <set href="#copy/text" attributeName="text-length" to="128" />
+          <set href="#copy/text" attributeName="fill" to="black" />
+        </use>
+        <!-- Insights module start -->
+        <svg id="stage">
+          <rect id="background" />
+          <use id="insights-tile" href="#tile-list">
+            <var id="align-mode" value="1" />
+            <var id="peek-enabled" value="0" />
+            <use href="#tile-list-item" class="insights-item">
+              <text id="aws-total-cost" y="55%" x="50%" font-size="26" font-family="Colfax-Bold">- / -</text>
+              <text y="65%" font-size="20" font-family="Colfax-Regular">Amazon Web Services</text>
+            </use>
+            <use href="#tile-list-item" class="insights-item">
+              <text id="azure-total-cost" y="55%" x="50%" font-size="26" font-family="Colfax-Bold">- / -</text>
+              <text y="65%" font-size="20" font-family="Colfax-Regular">Microsoft Azure</text>
+            </use>
+            <use href="#tile-list-item" class="insights-item">
+              <text id="pc-total-cost" y="55%" x="50%" font-size="26" font-family="Colfax-Bold">- / -</text>
+              <text y="65%" font-size="20" font-family="Colfax-Regular">Private Cloud</text>
+            </use>
+            <image id="logo" x="40%" y="8%" width="60" height="63" href="img/hpe-onesphere-mark.png" />
+          </use>
+        </svg>
+        <!-- Insights module end -->
+      </use>
+    </use>
+    <!-- Projects -->
+    <use id="item3" href="#panoramaview-item">
+      <use id="extenceBtn03" href="#push-button">
+        <rect width="100%" height="100%" fill="fb-white" />
+        <image id="projects-ico" x="72" y="186" width="21" height="21" href="img/folder.png" />
+        <text id="projects-total" x="120" y="207" font-size="29" font-family="Colfax-Regular">-</text>
+        <image id="deployemnts-ico" x="170" y="186" width="21" height="21" href="img/rocket.png" />
+        <text id="deployemnts-total" x="215" y="207" font-size="29" font-family="Colfax-Regular">-</text>
+
+        <use href="#mixed-text-center-mid" height="100%" fill="fb-black">
+          <set href="#header/text" attributeName="text-buffer" to="Projects" />
+          <set href="#header/text" attributeName="font-family" to="Colfax-Bold" />
+        </use>
+        <!-- Projects module starts -->
+        <svg id="projects-stack">
+          
+          <defs>
+            <symbol id="my-tile-item" href="#tile-list-item" focusable="false" pointer-events="none" system-events="all"
+              display="none">
+              <text id="text" />
+              <text id="deployments-num" />
+              <rect id="tile-sider-left" />
+              <rect id="tile-divider-bottom" class="tile-divider-bottom" />
+              <rect id="touch-me" pointer-events="all" x="0" y="0" width="100%" height="100%-2" opacity="0" />
+            </symbol>
+            <symbol id="no-projects-screen" focusable="false" pointer-events="none" system-events="all">
+              <rect id="background" />
+              <use href="#mixed-text-center-mid" height="100%" fill="fb-black">
+               <set href="#header/text" attributeName="text-buffer" to="Nothing Found"/>
+               <set href="#header/text" attributeName="font-family" to="Colfax-Bold" />
+              </use>
+              <rect id="touch-me" pointer-events="all" x="0" y="0" width="100%" height="100%-2" opacity="0" />
+            </symbol>
+          </defs>
+
+          <use id="my-list" href="#tile-list">
+            <var id="virtual" value="1" />
+            <var id="separator-height-bottom" value="2" />
+            <rect id="background" />
+            
+            <use id="empty-list" href="#no-projects-screen"/>
+            
+            <use id="my-pool" href="#tile-list-pool">
+              <use id="my-pool[0]" href="#my-tile-item" class="tile-list-item" />
+              <use id="my-pool[1]" href="#my-tile-item" class="tile-list-item" />
+              <use id="my-pool[2]" href="#my-tile-item" class="tile-list-item" />
+              <use id="my-pool[3]" href="#my-tile-item" class="tile-list-item" />
+              <use id="my-pool[4]" href="#my-tile-item" class="tile-list-item" />
+              <use id="my-pool[5]" href="#my-tile-item" class="tile-list-item" />
+              <use id="my-pool[6]" href="#my-tile-item" class="tile-list-item" />
+              <use id="my-pool[7]" href="#my-tile-item" class="tile-list-item" />
+              <use id="my-pool[8]" href="#my-tile-item" class="tile-list-item" />
+              <use id="my-pool[9]" href="#my-tile-item" class="tile-list-item" />
+            </use>
+
+            <svg id="deployments-stack">
+              <defs>
+                <symbol id="my-tile-item" href="#tile-list-item" focusable="false" pointer-events="none" system-events="all"
+                  display="none">
+                  <text id="text" />
+                  <rect id="tile-sider-left" />
+                  <rect id="tile-divider-bottom" class="tile-divider-bottom" />
+                  <rect id="touch-me" pointer-events="all" x="0" y="0" width="100%" height="100%-2" opacity="0" />
+                </symbol>
+              </defs>
+
+              <use id="my-deployments-list" href="#tile-list">
+                <var id="virtual" value="1" />
+                <var id="separator-height-bottom" value="2" />
+                <rect id="background" />
+                <use id="my-deployments-pool" href="#tile-list-pool">
+                  <use id="my-deployments-pool[0]" href="#my-tile-item" class="tile-list-item" />
+                  <use id="my-deployments-pool[1]" href="#my-tile-item" class="tile-list-item" />
+                  <use id="my-deployments-pool[2]" href="#my-tile-item" class="tile-list-item" />
+                  <use id="my-deployments-pool[3]" href="#my-tile-item" class="tile-list-item" />
+                  <use id="my-deployments-pool[4]" href="#my-tile-item" class="tile-list-item" />
+                  <use id="my-deployments-pool[5]" href="#my-tile-item" class="tile-list-item" />
+                  <use id="my-deployments-pool[6]" href="#my-tile-item" class="tile-list-item" />
+                  <use id="my-deployments-pool[7]" href="#my-tile-item" class="tile-list-item" />
+                  <use id="my-deployments-pool[8]" href="#my-tile-item" class="tile-list-item" />
+                  <use id="my-deployments-pool[9]" href="#my-tile-item" class="tile-list-item" />
+                </use>
+
+                <svg id="control-screen" display="none">
+                  <rect id="background" />
+                  <use id="restart-button" href="#square-button" y="30%" fill="fb-green">
+                    <set href="#text" attributeName="text-buffer" to="Restart" />
+                  </use>
+                  <use id="suspend-button" href="#square-button" y="55%" fill="fb-blue">
+                    <set href="#text" attributeName="text-buffer" to="Suspend" />
+                  </use>
+                </svg>
+
+              </use>
+            </svg>
+          </use>
+        </svg>
+        <!-- Projects module ends -->
+      </use>
+    </use>
+    <image id="logo" x="120" y="32" width="60" height="63" href="img/hpe-onesphere-mark.png" />
+    <image id="bg-pic" x="0" y="208" width="300" height="92" href="img/slide-bg.png" />
+    
+    <use id="pagination-dots" href="#pagination-widget" y="252">
+      <use href="#pagination-dot" fill="#9b9b9b" />
+      <use href="#pagination-dot" fill="#9b9b9b" />
+      <use href="#pagination-dot" fill="#9b9b9b" />
+      <use href="#pagination-dot" fill="#9b9b9b" />
+      <use href="#pagination-highlight-dot" fill="#2cdbd1" />
+    </use>
+
+    <rect width="300" height="300" fill="white">
+      <animate attributeName="display" begin="load" from="inherit" to="none" dur="8" final="freeze" />
+    </rect>
+    <text id="textBtm" x="50%" y="280">
+      <animate attributeName="display" begin="load" from="inherit" to="none" dur="8" final="freeze" />
+      <animate attributeName="opacity" begin="load" from="0" to="1" dur="2"  repeatCount="6"/>
+      Loading...
+    </text>
+    <image id="bigLogo" x="17%" y="8%" width="200" height="200" href="hpe-onesphere-mark.png">
+      <animate attributeName="display" begin="load" from="inherit" to="none" dur="8" final="freeze" />
+    </image>
+
   </use>
-  <text id="textBtm" x="50%" y="280">
-    <animate attributeName="opacity" begin="load" from="0" to="1" dur="0.5" final="freeze" />
-    Loading...
-  </text>
-  <image id="bigLogo" x="17%" y="8%" width="200" height="200" href="hpe-onesphere-mark.png">
-    <animate attributeName="opacity" begin="load" from="0" to="1" dur="0.5" final="freeze" />
-  </image>
-  <svg width="100%" height="100%">
-    <rect id="myRect" pointer-events="visible" />
-    <use id="contentInstance" href="#content" width="100%" height="100%" pointer-events="visible" />
-  </svg>
 </svg>
