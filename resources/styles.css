@@ -36,7 +36,11 @@ text {
   font-family: Colfax-Bold;
 }
 
-.cycle-item text {
+#totalCost text{
+  fill: black;
+}
+
+.rating-item text {
   font-size: 32;
   font-family: Colfax-Light;
   text-length: 32;
@@ -44,3 +48,50 @@ text {
   x: 50%;
   text-anchor: middle;
 }
+
+.rating-item {
+  height: 100%;
+}
+
+.insights-item {
+  height: 100%;
+}
+
+.insights-item text {
+  font-size: 32;
+  font-family: Colfax-Light;
+  text-length: 32;
+  fill: black;
+  x: 50%;
+  text-anchor: middle;
+}
+
+/* VT stylling */
+
+.tile-list-item {
+  height: 99;
+  text-length: 256;
+}
+
+.tile-list-item text {
+  font-family: System-Regular;
+  fill: "black";
+  text-anchor: start;
+}
+
+#deployments-num {
+  font-size: 16;
+  text-length: 16;
+  fill: "grey";
+  y: 85%;
+  x: 1%;
+}
+
+.tile-divider-bottom {
+  x: 0;
+  y: 100%-2;
+  width: 100%;
+  height: 2;
+  fill: #e0e0e0;
+}
+
